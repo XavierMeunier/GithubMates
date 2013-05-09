@@ -1,7 +1,13 @@
 GithubMates::Application.routes.draw do
   resources :users
 
-  resources :repos
+  resources :repos do
+    resources :users
+  end
+
+  # match "repos/:repos"
+
+  root 'repos#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

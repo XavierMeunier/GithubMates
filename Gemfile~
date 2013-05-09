@@ -43,3 +43,13 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+
+gem 'twitter-bootstrap-rails'
+gem 'haml'
+
+gem 'heroku', '~> 2.39.2'
+
+gem "capybara", '~> 2.1.0', group: [:development, :test]
+gem 'vcr', '~> 2.4.0', group: [:development, :test]
+gem 'rspec', group: [:development, :test]

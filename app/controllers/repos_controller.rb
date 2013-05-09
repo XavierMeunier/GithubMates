@@ -1,20 +1,38 @@
 class ReposController < ApplicationController
-  before_action :set_repo, only: [:show, :edit, :update, :destroy]
+  before_action :set_repo, only: [:edit, :update, :destroy]
+require 'open-uri'
+require 'json'
+
+
+  BASE_URL = "https://api.github.com/"
 
   # GET /repos
   # GET /repos.json
   def index
-    @repos = Repo.all
+    @repo = Repo.new
   end
 
   # GET /repos/1
   # GET /repos/1.json
   def show
+    user= params[:user]
+    repo= params[:repo]
+
+    url = BASE_URL + "repos/" + user + "/" + repo + "/collaborators"
+    # url = BASE_URL + "repos/rails/rails/collaborators"
+    # url = BASE_URL + "repositories"
+    @repo = JSON.parse(open(url).read)
   end
 
   # GET /repos/new
   def new
-    @repo = Repo.new
+    # user= params[:user]
+    repo= @repo.user
+
+    url = BASE_URL + "repos/" + user + "/" + name + "/collaborators"
+    # url = BASE_URL + "repos/rails/rails/collaborators"
+    # url = BASE_URL + "repositories"
+    @repo = JSON.parse(open(url).read)
   end
 
   # GET /repos/1/edit
@@ -24,17 +42,25 @@ class ReposController < ApplicationController
   # POST /repos
   # POST /repos.json
   def create
-    @repo = Repo.new(repo_params)
+    #@repo = Repo.new(repo_params)
 
-    respond_to do |format|
-      if @repo.save
-        format.html { redirect_to @repo, notice: 'Repo was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @repo }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @repo.errors, status: :unprocessable_entity }
-      end
-    end
+    user= params[:user]
+    repo= params[:repos]
+
+    url = BASE_URL + "repos/" + user + "/" + repo + "/collaborators"
+    # url = BASE_URL + "repos/rails/rails/collaborators"
+    # url = BASE_URL + "repositories"
+    @repo = JSON.parse(open(url).read)
+
+    # respond_to do |format|
+    #   if @repo.save
+    #     format.html { redirect_to @repo, notice: 'Repo was successfully created.' }
+    #     format.json { render action: 'show', status: :created, location: @repo }
+    #   else
+    #     format.html { render action: 'new' }
+    #     format.json { render json: @repo.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # PATCH/PUT /repos/1

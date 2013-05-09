@@ -47,6 +47,7 @@ end
 
 gem 'twitter-bootstrap-rails'
 gem 'haml'
+gem 'html2haml'
 
 gem 'heroku', '~> 2.39.2'
 

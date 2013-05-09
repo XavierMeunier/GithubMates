@@ -1,0 +1,6 @@
+= form_tag("/repos/show", :method=>"get") do
+  =label_tag :user, "User"
+  =text_field_tag :user
+  =label_tag :repo, "Repository"
+  =text_field_tag :repo
+  =submit_tag "Search repo"
