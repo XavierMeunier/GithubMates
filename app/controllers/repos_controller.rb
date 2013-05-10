@@ -22,6 +22,22 @@ require 'json'
     # url = BASE_URL + "repos/rails/rails/collaborators"
     # url = BASE_URL + "repositories"
     @repo = JSON.parse(open(url).read)
+
+
+    @repo.each do |doc|
+      ids = doc['login']
+      url_people = BASE_URL + "users/" + ids
+      @repo << JSON.parse(open(url_people).read)
+    end
+
+    # @repo["id"].each do |id|
+    #   p id["login"]
+    # end
+
+    # @repo.each_with_index do |nb|
+    #   p @repo[index]["id"]
+    # end
+
   end
 
   # GET /repos/new
