@@ -49,6 +49,9 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+# gem 'pg'
+gem 'taps'
+
 
 gem 'twitter-bootstrap-rails'
 gem 'haml'

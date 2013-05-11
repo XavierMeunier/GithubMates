@@ -1,2 +1,6 @@
 %h1 Listing repos
+
+= form_tag redirect_to "https://github.com/login/oauth/access_token"
+  =submit_tag "Use app"
+
 = render 'form'
