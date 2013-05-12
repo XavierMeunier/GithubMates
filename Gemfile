@@ -52,6 +52,7 @@ end
 # gem 'pg'
 gem 'taps'
 
+gem 'oauth'
 
 gem 'twitter-bootstrap-rails'
 gem 'haml'

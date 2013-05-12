@@ -84,6 +84,7 @@ GEM
     multi_json (1.7.3)
     netrc (0.7.7)
     nokogiri (1.5.9)
+    oauth (0.4.7)
     pg (0.15.1)
     polyglot (0.3.3)
     rack (1.5.2)
@@ -182,6 +183,7 @@ DEPENDENCIES
   html2haml
   jbuilder (~> 1.0.1)
   jquery-rails
+  oauth
   pg
   rails (= 4.0.0.rc1)
   rspec
