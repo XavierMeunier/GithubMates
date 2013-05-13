@@ -42,6 +42,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.2)
+    commonjs (0.2.6)
     daemons (1.1.9)
     diff-lcs (1.2.4)
     erubis (2.7.0)
@@ -75,6 +76,12 @@ GEM
     json (1.7.7)
     launchy (2.3.0)
       addressable (~> 2.3)
+    less (2.3.2)
+      commonjs (~> 0.2.6)
+    less-rails (2.3.3)
+      actionpack (>= 3.1)
+      less (~> 2.3.1)
+    libv8 (3.11.8.17)
     mail (2.5.3)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -106,6 +113,7 @@ GEM
     rake (10.0.4)
     rdoc (3.12.2)
       json (~> 1.4)
+    ref (1.0.4)
     rest-client (1.6.7)
       mime-types (>= 1.16)
     rspec (2.13.0)
@@ -147,6 +155,9 @@ GEM
       rest-client (>= 1.4.0, < 1.7.0)
       sequel (~> 3.20.0)
       sinatra (~> 1.0.0)
+    therubyracer (0.11.4)
+      libv8 (~> 3.11.8.12)
+      ref
     thin (1.5.1)
       daemons (>= 1.0.9)
       eventmachine (>= 0.12.6)
@@ -183,6 +194,7 @@ DEPENDENCIES
   html2haml
   jbuilder (~> 1.0.1)
   jquery-rails
+  less-rails
   oauth
   pg
   rails (= 4.0.0.rc1)
@@ -191,6 +203,7 @@ DEPENDENCIES
   sdoc
   sqlite3
   taps
+  therubyracer
   thin
   turbolinks
   twitter-bootstrap-rails

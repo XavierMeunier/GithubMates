@@ -1,6 +1,13 @@
-= form_tag("/repos/show", :method=>"get") do
-  =label_tag :user, "User"
-  =text_field_tag :user
-  =label_tag :repo, "Repository"
-  =text_field_tag :repo
-  =submit_tag "Search repo"
+= form_tag("/repos/show", :method=>"get", :html => { :class => 'form-horizontal' }) do
+  .control-group
+    = label_tag nil, "Nom du Repository", :class => 'control-label'
+    .controls
+      = text_field_tag :repo, nil, :class => 'text_field'
+  .control-group
+    = label_tag nil, "Nom du propriétaire", :class => 'control-label'
+    .controls
+      = text_field_tag :user, nil, :class => 'text_field'
+  .form-actions
+    = submit_tag "Rechercher", :class => 'btn btn-primary'
+    = link_to t('.cancel', :default => t("helpers.links.cancel")), |
+    repos_path, :class => 'btn'                                  |

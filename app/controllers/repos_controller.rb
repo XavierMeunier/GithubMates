@@ -51,6 +51,8 @@ require 'json'
   def show
     user= params[:user]
     repo= params[:repo]
+    puts user
+    puts repo
     url = BASE_URL + "repos/" + user + "/" + repo + "/collaborators"+ "?client_id=e24305f14f7f9a67c465&client_secret=604015f905f6207ec29f3661b952397663d58347"
     # url = BASE_URL + "repos/rails/rails/collaborators"
     # url = BASE_URL + "repositories"
@@ -63,14 +65,6 @@ require 'json'
       url_people = BASE_URL + "users/" + ids + "?client_id=e24305f14f7f9a67c465&client_secret=604015f905f6207ec29f3661b952397663d58347"
       @results << JSON.parse(open(url_people).read)
     end
-
-    # @repo["id"].each do |id|
-    #   p id["login"]
-    # end
-
-    # @repo.each_with_index do |nb|
-    #   p @repo[index]["id"]
-    # end
 
   end
 
